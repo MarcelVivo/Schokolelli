@@ -1,0 +1,8 @@
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+    "CategoryId": 1234,
+    "CategoryName": "REST API",
+    "Description": "Eine Beschreibung"
+}

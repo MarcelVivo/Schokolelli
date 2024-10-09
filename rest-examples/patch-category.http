@@ -1,0 +1,6 @@
+PATCH http://localhost:3000/categories/1234
+Content-Type: application/json
+
+{
+    "Description": "Meine neue Beschreibung"
+}
