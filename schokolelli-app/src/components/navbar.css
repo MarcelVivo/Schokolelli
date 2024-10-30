@@ -1,0 +1,34 @@
+/* src/components/navbar.css */
+
+.navbar {
+  background-color: #3E2723; /* Dunkelbrauner Hintergrund */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Zentriert die Navigation */
+}
+
+.navbar-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-right: 20px;
+}
+
+.navbar-item:last-child {
+  margin-right: 0; /* Entfernt den Abstand beim letzten Element */
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #F5EDE0; /* Pastellbraune Schrift */
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar-item a:hover {
+  color: #D2B48C; /* Etwas hellerer Pastellton beim Hover */
+}

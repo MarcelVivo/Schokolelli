@@ -1,0 +1,32 @@
+/* src/components/fotogalerie.css */
+
+.photo-gallery-container {
+  display: flex;
+  justify-content: center; /* Zentriert den Container horizontal */
+  align-items: center; /* Zentriert den Container vertikal */
+  height: 100vh; /* Setzt die Höhe auf die gesamte Höhe des Viewports */
+  width: 100vw; /* Setzt die Breite auf die gesamte Breite des Viewports */
+  overflow: hidden;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Erstellt zwei Spalten */
+  gap: 10px; /* Abstand zwischen den Bildern */
+  justify-items: center; /* Zentriert die Bilder in ihren Zellen */
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.gallery-photo {
+  width: 100%; /* Bilder füllen die Zellen aus */
+  max-width: 200px; /* Begrenzung der maximalen Breite der Bilder */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.gallery-photo:hover {
+  transform: scale(1.05); /* Vergrößert das Bild bei Hover leicht */
+}

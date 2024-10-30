@@ -1,0 +1,37 @@
+/* src/components/preisliste.css */
+
+.preisliste-container {
+  padding: 20px;
+  text-align: center;
+  color: #3E2723; /* Dunkelbraune Schrift */
+  background-color: #F5EDE0; /* Heller pastellbrauner Hintergrund */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 3cm auto;
+}
+
+.preisliste-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.preisliste-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.preisliste-container li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.preisliste-link {
+  text-decoration: none;
+  color: #3E2723; /* Dunkelbraune Schrift */
+  transition: color 0.3s ease;
+}
+
+.preisliste-link:hover {
+  color: #D2B48C; /* Hellerer Braunton beim Hover */
+}
