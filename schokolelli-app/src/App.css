@@ -1,12 +1,199 @@
 /* src/app.css */
+
+/* Zentriert die Startseite */
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh; /* Damit das Bild vertikal zentriert wird */
+  background-color: #f5f5f5; /* Optional: Hintergrundfarbe anpassen */
 }
 
+/* Logo-Stile für die Startseite */
 .centered-logo {
   max-width: 300px; /* Größe des Logos anpassen, falls notwendig */
   height: auto;
+}
+
+/* Navbar-Stile */
+.navbar {
+  background-color: #5d4037; /* Schokoladenbraun */
+  padding: 10px;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Zentriert die Navbar-Elemente */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin: 0 15px;
+}
+
+.navbar-item a {
+  color: #d7b39d; /* Pastellbraun für den Text */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-item a:hover {
+  color: #ffffff; /* Weiß bei Hover */
+}
+
+/* Fotogalerie-Stile */
+.photo-gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.gallery-photo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.gallery-photo:hover {
+  transform: scale(1.05); /* Vergrößert das Bild bei Hover leicht */
+}
+
+/* Tabellenstile für Kunden- und Produktliste */
+.table-container {
+  margin: auto;
+  max-width: 800px;
+  padding: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Fehlernachricht-Stil */
+.error-message {
+  color: red;
+  margin-bottom: 16px;
+}
+
+/* Button-Stile */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #5d4037; /* Schokoladenbraun */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #4e342e;
+}
+
+.btn-secondary {
+  background-color: #d7b39d; /* Pastellbraun */
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #c3a089;
+}
+
+.btn-success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #45a049;
+}
+
+.btn-danger {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #e53935;
+}
+
+/* Container für Bestellformular */
+.form-container {
+  margin: auto;
+  max-width: 800px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Stil für Preisliste */
+.price-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin: 8px 0;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-item-title {
+  font-weight: bold;
+}
+
+.price-item-price {
+  color: #5d4037;
+  font-weight: bold;
 }

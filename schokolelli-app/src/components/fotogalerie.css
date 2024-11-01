@@ -2,27 +2,24 @@
 
 .photo-gallery-container {
   display: flex;
-  justify-content: center; /* Zentriert den Container horizontal */
-  align-items: center; /* Zentriert den Container vertikal */
-  height: 100vh; /* Setzt die Höhe auf die gesamte Höhe des Viewports */
-  width: 100vw; /* Setzt die Breite auf die gesamte Breite des Viewports */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* sorgt dafür, dass der Container die volle Höhe der Seite einnimmt */
+  width: 100vw;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Erstellt zwei Spalten */
-  gap: 10px; /* Abstand zwischen den Bildern */
-  justify-items: center; /* Zentriert die Bilder in ihren Zellen */
-  max-width: 420px; /* Maximale Breite der Galerie */
-  padding: 20px; /* Füge etwas Abstand innerhalb des Containers hinzu */
-  box-sizing: border-box;
+  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+  gap: 10px;
+  justify-items: center; /* Zentriert die Bilder in den Zellen */
+  max-width: 420px; /* Maximale Breite für die Galerie */
 }
 
 .gallery-photo {
-  width: 100%; /* Bilder füllen die Zellen aus */
-  max-width: 200px; /* Begrenzung der maximalen Breite der Bilder */
+  width: 100%;
+  max-width: 200px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
