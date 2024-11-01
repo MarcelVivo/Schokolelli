@@ -1,4 +1,4 @@
-// src/components/Navbar.jsx
+// src/components/navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
@@ -13,6 +13,7 @@ function Navbar() {
         <li className="navbar-item"><Link to="/fotogalerie">Fotogalerie</Link></li>
         <li className="navbar-item"><Link to="/preisliste">Preisliste</Link></li>
         <li className="navbar-item"><Link to="/bestellformular">Bestellformular</Link></li>
+        <li className="navbar-item"><Link to="/customers">Kundenliste</Link></li>
       </ul>
     </nav>
   );

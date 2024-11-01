@@ -7,6 +7,7 @@
   height: 100vh; /* Setzt die Höhe auf die gesamte Höhe des Viewports */
   width: 100vw; /* Setzt die Breite auf die gesamte Breite des Viewports */
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .photo-gallery {
@@ -14,7 +15,8 @@
   grid-template-columns: repeat(2, 1fr); /* Erstellt zwei Spalten */
   gap: 10px; /* Abstand zwischen den Bildern */
   justify-items: center; /* Zentriert die Bilder in ihren Zellen */
-  max-width: 420px;
+  max-width: 420px; /* Maximale Breite der Galerie */
+  padding: 20px; /* Füge etwas Abstand innerhalb des Containers hinzu */
   box-sizing: border-box;
 }
 

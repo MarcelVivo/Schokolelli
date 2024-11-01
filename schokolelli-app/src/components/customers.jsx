@@ -1,16 +1,16 @@
-// src/components/products.jsx
+// src/components/customers.jsx
 import React, { useEffect, useState } from 'react';
 
 const api = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
-function ProductList() {
-  const [products, setProducts] = useState([]);
-  const [editableProductId, setEditableProductId] = useState(null);
-  const [editedProduct, setEditedProduct] = useState({});
+function CustomerList() {
+  const [customers, setCustomers] = useState([]);
+  const [editableCustomerId, setEditableCustomerId] = useState(null);
+  const [editedCustomer, setEditedCustomer] = useState({});
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${api}/products`)
+    fetch(`${api}/customers`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -18,122 +18,122 @@ function ProductList() {
         return response.json();
       })
       .then(data => {
-        const sortedData = sortProducts(data);
-        setProducts(sortedData);
+        const sortedData = sortCustomers(data);
+        setCustomers(sortedData);
       })
       .catch(error => {
-        console.error('Error fetching products:', error);
-        setError('Produktdaten konnten nicht geladen werden.');
+        console.error('Error fetching customers:', error);
+        setError('Kundendaten konnten nicht geladen werden.');
       });
   }, []);
 
-  const sortProducts = (products) => {
-    return products.sort((a, b) => a.ProductName.localeCompare(b.ProductName));
+  const sortCustomers = (customers) => {
+    return customers.sort((a, b) => a.CustomerName.localeCompare(b.CustomerName));
   };
 
-  const handleInputChange = (productId, field, value) => {
-    setEditedProduct(prev => ({
+  const handleInputChange = (customerId, field, value) => {
+    setEditedCustomer(prev => ({
       ...prev,
-      [productId]: {
-        ...prev[productId],
+      [customerId]: {
+        ...prev[customerId],
         [field]: value,
       },
     }));
   };
 
-  const handleSave = (productId) => {
-    const updatedProduct = editedProduct[productId];
-    fetch(`${api}/products/${productId}`, {
+  const handleSave = (customerId) => {
+    const updatedCustomer = editedCustomer[customerId];
+    fetch(`${api}/customers/${customerId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(updatedProduct),
+      body: JSON.stringify(updatedCustomer),
     })
       .then(response => {
         if (response.ok) {
-          setProducts(products.map(product =>
-            product.ProductID === productId ? { ...product, ...updatedProduct } : product
+          setCustomers(customers.map(customer =>
+            customer.CustomerID === customerId ? { ...customer, ...updatedCustomer } : customer
           ));
-          setEditableProductId(null);
+          setEditableCustomerId(null);
         } else {
-          alert('Failed to update product');
+          alert('Failed to update customer');
         }
       })
-      .catch(error => console.error('Error updating product:', error));
+      .catch(error => console.error('Error updating customer:', error));
   };
 
-  const handleDelete = (productId) => {
-    fetch(`${api}/products/${productId}`, {
+  const handleDelete = (customerId) => {
+    fetch(`${api}/customers/${customerId}`, {
       method: 'DELETE',
     })
       .then(response => {
         if (response.ok) {
-          setProducts(products.filter(product => product.ProductID !== productId));
+          setCustomers(customers.filter(customer => customer.CustomerID !== customerId));
         } else {
-          alert('Failed to delete product');
+          alert('Failed to delete customer');
         }
       })
-      .catch(error => console.error('Error deleting product:', error));
+      .catch(error => console.error('Error deleting customer:', error));
   };
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Produktliste</h1>
+      <h1 className="text-2xl font-bold mb-4">Kundenliste</h1>
 
       {error && <p className="text-red-500">{error}</p>}
 
       <button
         className="btn btn-primary px-4 py-2 mb-4"
-        onClick={() => setEditableProductId('new')}
+        onClick={() => setEditableCustomerId('new')}
       >
-        Neues Produkt hinzufügen
+        Neuen Kunden hinzufügen
       </button>
-      {editableProductId === 'new' && (
+      {editableCustomerId === 'new' && (
         <div className="mb-4 p-4 border rounded">
           <input
             className="border p-2 mb-2 w-full"
             type="text"
-            placeholder="Name des Produkts"
-            value={editedProduct['new']?.ProductName || ''}
-            onChange={(e) => handleInputChange('new', 'ProductName', e.target.value)}
+            placeholder="Name des Kunden"
+            value={editedCustomer['new']?.CustomerName || ''}
+            onChange={(e) => handleInputChange('new', 'CustomerName', e.target.value)}
           />
           <input
             className="border p-2 mb-2 w-full"
             type="text"
-            placeholder="Beschreibung"
-            value={editedProduct['new']?.Description || ''}
-            onChange={(e) => handleInputChange('new', 'Description', e.target.value)}
+            placeholder="Email"
+            value={editedCustomer['new']?.Email || ''}
+            onChange={(e) => handleInputChange('new', 'Email', e.target.value)}
           />
           <div className="flex space-x-2">
             <button
               className="btn btn-secondary px-4 py-2 mb-4"
               onClick={() => {
-                const newProduct = editedProduct['new'];
-                fetch(`${api}/products`, {
+                const newCustomer = editedCustomer['new'];
+                fetch(`${api}/customers`, {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
                   },
-                  body: JSON.stringify(newProduct),
+                  body: JSON.stringify(newCustomer),
                 })
                   .then(response => response.json())
                   .then(data => {
-                    setProducts([...products, data]);
-                    setEditableProductId(null);
-                    setEditedProduct(prev => {
+                    setCustomers([...customers, data]);
+                    setEditableCustomerId(null);
+                    setEditedCustomer(prev => {
                       const { new: _, ...rest } = prev;
                       return rest;
                     });
                   })
-                  .catch(error => console.error('Error adding new product:', error));
+                  .catch(error => console.error('Error adding new customer:', error));
               }}
             >
               Save
             </button>
             <button
               className="btn btn-secondary px-4 py-2 mb-4 mx-1"
-              onClick={() => setEditableProductId(null)}
+              onClick={() => setEditableCustomerId(null)}
             >
               Cancel
             </button>
@@ -144,54 +144,54 @@ function ProductList() {
       <table className="min-w-full bg-white border">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b">Name des Produkts</th>
-            <th className="py-2 px-4 border-b">Beschreibung</th>
+            <th className="py-2 px-4 border-b">Name des Kunden</th>
+            <th className="py-2 px-4 border-b">Email</th>
             <th className="py-2 px-4 border-b">Aktionen</th>
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
-            <tr key={product.ProductID} className="hover:bg-gray-100">
+          {customers.map(customer => (
+            <tr key={customer.CustomerID} className="hover:bg-gray-100">
               <td className="py-2 px-4 border-b">
-                {editableProductId === product.ProductID ? (
+                {editableCustomerId === customer.CustomerID ? (
                   <input
                     className="border p-2 w-full"
                     type="text"
-                    value={editedProduct[product.ProductID]?.ProductName || product.ProductName}
+                    value={editedCustomer[customer.CustomerID]?.CustomerName || customer.CustomerName}
                     onChange={(e) =>
-                      handleInputChange(product.ProductID, 'ProductName', e.target.value)
+                      handleInputChange(customer.CustomerID, 'CustomerName', e.target.value)
                     }
                   />
                 ) : (
-                  product.ProductName
+                  customer.CustomerName
                 )}
               </td>
               <td className="py-2 px-4 border-b">
-                {editableProductId === product.ProductID ? (
+                {editableCustomerId === customer.CustomerID ? (
                   <input
                     className="border p-2 w-full"
                     type="text"
-                    value={editedProduct[product.ProductID]?.Description || product.Description}
+                    value={editedCustomer[customer.CustomerID]?.Email || customer.Email}
                     onChange={(e) =>
-                      handleInputChange(product.ProductID, 'Description', e.target.value)
+                      handleInputChange(customer.CustomerID, 'Email', e.target.value)
                     }
                   />
                 ) : (
-                  product.Description
+                  customer.Email
                 )}
               </td>
               <td className="py-2 px-4 border-b">
-                {editableProductId === product.ProductID ? (
+                {editableCustomerId === customer.CustomerID ? (
                   <div className="flex space-x-2">
                     <button
                       className="btn btn-secondary px-4 py-2 mb-4 mx-1"
-                      onClick={() => handleSave(product.ProductID)}
+                      onClick={() => handleSave(customer.CustomerID)}
                     >
                       Save
                     </button>
                     <button
                       className="btn btn-secondary px-4 py-2 mb-4 mx-1"
-                      onClick={() => setEditableProductId(null)}
+                      onClick={() => setEditableCustomerId(null)}
                     >
                       Cancel
                     </button>
@@ -200,13 +200,13 @@ function ProductList() {
                   <div className="flex space-x-2">
                     <button
                       className="btn btn-success px-4 py-2 mb-4 mx-1"
-                      onClick={() => setEditableProductId(product.ProductID)}
+                      onClick={() => setEditableCustomerId(customer.CustomerID)}
                     >
                       Edit
                     </button>
                     <button
                       className="btn btn-danger px-4 py-2 mb-4 mx-1"
-                      onClick={() => handleDelete(product.ProductID)}
+                      onClick={() => handleDelete(customer.CustomerID)}
                     >
                       Delete
                     </button>
@@ -221,4 +221,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default CustomerList;

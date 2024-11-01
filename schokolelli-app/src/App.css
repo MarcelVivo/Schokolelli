@@ -1,9 +1,12 @@
-/* src/App.css */
-body {
-  background-color: #F5EDE0; /* Helles Pastell-Braun als Hintergrund */
-  color: #3E2723; /* Dunkelbraune Schrift */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* src/app.css */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Damit das Bild vertikal zentriert wird */
+}
+
+.centered-logo {
+  max-width: 300px; /* Größe des Logos anpassen, falls notwendig */
+  height: auto;
 }

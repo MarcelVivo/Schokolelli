@@ -5,7 +5,7 @@ import './greeting.css';
 function Greeting() {
   return (
     <div className="greeting-container">
-      <img src="/img/SchokolelliLogo.png" alt="Willkommens-GIF" className="greeting-gif" />
+      <img src={`${process.env.PUBLIC_URL}/img/SchokolelliLogo.png`} alt="Schokolelli Logo" className="greeting-logo" />
     </div>
   );
 }

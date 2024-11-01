@@ -1,14 +1,12 @@
 /* src/components/greeting.css */
-
 .greeting-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Vollbildhöhe */
+  height: 100vh; /* optional: für vertikale Zentrierung */
 }
 
-.greeting-gif {
-  max-width: 80%;
-  max-height: 80vh;
-  object-fit: contain;
+.greeting-logo {
+  max-width: 100%;
+  height: auto;
 }

@@ -1,0 +1,38 @@
+/* src/components/categories.css */
+
+.container {
+    margin: auto;
+    max-width: 800px;
+    padding: 16px;
+}
+  
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+  
+.error {
+    color: red;
+    margin-bottom: 16px;
+}
+  
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+  
+.table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+  
+.table tr:hover {
+    background-color: #f1f1f1;
+}

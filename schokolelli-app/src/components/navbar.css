@@ -1,34 +1,39 @@
 /* src/components/navbar.css */
-
 .navbar {
-  background-color: #3E2723; /* Dunkelbrauner Hintergrund */
-  padding: 10px 20px;
+  background-color: #4e342e; /* Schokoladenbraun als Hintergrundfarbe */
+  padding: 10px 0;
   display: flex;
-  justify-content: center; /* Zentriert die Navigation */
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-list {
+  list-style-type: none;
   display: flex;
-  list-style: none;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
 
 .navbar-item {
-  margin-right: 20px;
-}
-
-.navbar-item:last-child {
-  margin-right: 0; /* Entfernt den Abstand beim letzten Element */
+  font-weight: bold;
 }
 
 .navbar-item a {
+  color: #d2b48c; /* Pastellbraun für die Schriftfarbe */
   text-decoration: none;
-  color: #F5EDE0; /* Pastellbraune Schrift */
-  font-size: 18px;
-  transition: color 0.3s;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
 }
 
 .navbar-item a:hover {
-  color: #D2B48C; /* Etwas hellerer Pastellton beim Hover */
+  background-color: #795548; /* Dunkleres Schokoladenbraun für den Hover-Effekt */
+  border-radius: 4px;
+}
+
+.navbar-item a:visited {
+  color: #b2957a; /* Etwas dunklerer Pastellton für besuchte Links */
 }

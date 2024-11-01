@@ -1,27 +1,29 @@
-// src/App.jsx
+// src/app.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Greeting from './components/greetings'; // Ändere hier "Greeting" zu "greetings"
-import ProductCatalog from './components/categories';
-import Productlist from './components/products';
-import Bestellformular from './components/Bestellformular';
-import Fotogalerie from './components/Fotogalerie';
-import Preisliste from './components/Preisliste';
-import './App.css';
+import Bestellformular from './components/bestellformular';
+import Fotogalerie from './components/fotogalerie';
+import Preisliste from './components/preisliste';
+import Customers from './components/customers'; 
+import ProductCatalog from './components/products'; 
+import CategoryList from './components/categories'; // Import für die Kategorie-Liste
+import './app.css';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Greeting />} /> {/* Startseite mit GIF */}
-        <Route path="/kategorien" element={<ProductCatalog />} />
-        <Route path="/produktliste" element={<Productlist />} />
-        <Route path="/fotogalerie" element={<Fotogalerie />} />
-        <Route path="/preisliste" element={<Preisliste />} />
-        <Route path="/bestellformular" element={<Bestellformular />} />
-      </Routes>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/bestellformular" element={<Bestellformular />} />
+          <Route path="/fotogalerie" element={<Fotogalerie />} />
+          <Route path="/preisliste" element={<Preisliste />} />
+          <Route path="/product-catalog" element={<ProductCatalog />} />
+          <Route path="/categories" element={<CategoryList />} /> {/* Neue Route für CategoryList */}
+        </Routes>
+      </div>
     </Router>
   );
 }
