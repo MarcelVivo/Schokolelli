@@ -160,7 +160,7 @@ npm install react-bootstrap bootstrap
   - Startseite mit Schokolelli Logo
   - Fotogallerie
   - Bestellormular
-  - Preisliste (Verlinkt mit dem Bestellformular)
+  - Preisliste (Direkt Verlinkt mit dem Bestellformular)
 
 ## Journal
 
