@@ -24,18 +24,18 @@ Geforkt von [https://github.com/AndrejPHP/w3schools-database](https://github.com
 
 Dieses Repository stellt zur Verfügung:
 
-- Ein Docker-Compose, das die Datenbank auf Port 3309 (nicht Standard, keine Konflikte) einrichtet.
+- Ein Docker-Compose, welches die Datenbank auf Port 3309 (nicht Standard, keine Konflikte) einrichtet.
 - Initialisiert die Daten der Datenbank von w3schools (bereitgestellt von @AndrejPHP).
 - Visual Studio Code-Konfiguration.
 
 ### Fork in dein GitHub-Konto
 
 1. Gehe zu [github.com](https://github.com), erstelle ein neues Konto oder logge dich ein.
-2. Forke mein Repository: [https://github.com/theradun2git/Webdesign-Projektarbeit-React](https://github.com/theradun2git/Webdesign-Projektarbeit-React)
+2. Forke mein Repository: https://github.com/MarcelVivo/Schokolelli
 3. Nun hast du das Repository `w3schools-database` in deinem GitHub-Konto. Klone es mit:
 
    ```bash
-   git clone https://github.com/DEINUSERNAME/w3schools-database
+   git clone https://github.com/(dein-Usernme)/w3schools-database
    cd w3schools-database
    code .
 
@@ -48,7 +48,7 @@ docker-compose up
 ## Die React-App wie folgt starten
 
 ```bash
-cd my-app
+cd schokolelli-app
 npm start
 ```
 
@@ -94,10 +94,10 @@ und die entsprechenden Daten werden eingefügt.
 3. Installiere die Anwendung mit:
 
    ```bash
-   npx create-react-app my-app
+   npx create-react-app schokolelli-app
    ```
 
-4. Nach der Installation ins Verzeichnis `my-app` wechseln.
+4. Nach der Installation ins Verzeichnis zu schokolelli-app wechseln.
 5. Starte die App mit:
 
    ```bash
@@ -132,7 +132,7 @@ und die entsprechenden Daten werden eingefügt.
 
 ### Erforderliche Pakete für die Navigationsleiste
 
-Installation über die Befehlszeile in `my-app`:
+Installation über die Befehlszeile in ` schokolelli-app`:
 
 ```bash
 npm install react-router-dom
@@ -140,7 +140,7 @@ npm install react-router-dom
 
 ### Erforderliche Pakete für das Design
 
-Installation über die Befehlszeile in `my-app`:
+Installation über die Befehlszeile in ` schokolelli-app`
 
 ```bash
 npm install react-bootstrap bootstrap
@@ -160,12 +160,11 @@ npm install react-bootstrap bootstrap
    npm -v
    ```
 
-3. Installiere npm erneut über die Befehlszeile in `my-app`:
+3. Installiere npm erneut über die Befehlszeile in ``: schokolelli-app
 
    ```bash
    npm install
    ```
-
 
 ## Projektfunktionen
 
@@ -173,18 +172,20 @@ npm install react-bootstrap bootstrap
 - 2 verschiedene Entitäten mit POST, PATCH, DELETE (Buttons mit Neu, Bearbeiten oder Löschen)
 - Drei oder mehr zusätzliche Funktionen sind verfügbar und funktionsfähig:
   - Navigationsleiste
+-	Navigationsliste mit «Adnim» und «Kunden» Bereich (Umschaltung oben Rechts)
   - Startseite mit Schokolelli Logo
   - Fotogallerie
   - Bestellormular
-  - Preisliste
+  - Preisliste (Verlinkt mit dem Bestellformular)
 
 ## Journal
 
 ### 25.10.2024
 
-- Einarbeitung in „React“, 
+- Einarbeitung in „React“, 	(Div. Tutorials, ChatGPT, Abfrage, Google Recherche)
+zB. https://www.youtube.com/watch?v=qJqjcxLvEwg
 - Docker aktiviert
-- Github aktualisiert 
+- Github eingerichtet und aktualisiert 
 
 ### 27.10.2024
 
@@ -193,25 +194,37 @@ npm install react-bootstrap bootstrap
 - Bestellformular
 - Farbdefinition von der Seite (Buttons, Schriften, Hintergrund)
 . Codes angepasst
-- Bei dem Bestellformular die Kategorien "Dubai" Schokolade im Dropdown Menue hinzugefügt
+- Bei dem Bestellformular die Kategorien "Dubai" Schokolade im Dropdown Menü hinzugefügt
 
 ### 28.10.2024
 
 - Firmenlogo auf der Startseite einfügen
 - Pfad von der Datei ist nicht korrekt, es funktioniert nicht. 
 - Nach mehreren Anläufen hat es funktioniert
+- Einfügen der 3 Identitäten Seiten (categories, products und customers)
+- app.jsx Code angepasst damit die 3 Identitäten funktionieren
 
 ### 29.10.2024
 
-- Nach dem einfügen des Logos auf der Startseite, zeigt es das Bestellformular und die Fotogallerie nicht mehr an
+- Nach dem einfügen des Logos auf der Startseite, zeigt es das Bestellformular und die Fotogallerie nicht mehr an (Habe aus Versehen einen Code falsch abgeändert)
 - Fehlersuche
-- Das Bestellformular und die Fotogallerie sind wieder hergestellt
-- Jedoch fehlt das Logo auf der Startseite wieder. ( Als Platzhalter wird nur "Firmenlogo" in Textform angezeigt)
-- Startseite betitelung auf "Willkommen" angepasst.
-- Navigations Leiste Zentriert
-- Zusätzliche Seite "Preisliste" hinugefügt
+- Das Bestellformular und die Fotogalerie sind wieder hergestellt
+- Jedoch fehlt das Logo auf der Startseite wieder. (Als Platzhalter wird nur "Firmenlogo" in Textform angezeigt) Fehler gefunden und korrigiert
+- Startseite Betitelung auf "Willkommen" angepasst.
+- Navigation Leiste angepasst (Schrift und Farben)
+- Zusätzliche Seite "Preisliste" hinzugefügt
 - Verlinkung von "Preisliste" auf "Bestellformular" hinzugefügt
 
-### 30.10.2024
+### 01.11.2024
 
-- 
+- Navigation Leiste angepasst und gesplittet (app.jsx Code aktualisiert)
+ - (1 x Kundenansicht) und (1x Admin Bereich) hinzugefpgt
+- 2 neue Buttons kreiert (oben Rechts in der Navigation Leiste)
+- Farben der Buttons angepasst
+
+### 03.11.2024
+
+- Alle Funktionen noch einmal getestet und überprüft (Alles funktioniert Fehlerfrei)
+- Finale Version auf GitHub hochgeldaen
+
+
