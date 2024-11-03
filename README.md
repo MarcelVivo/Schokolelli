@@ -171,7 +171,7 @@ npm install react-bootstrap bootstrap
 - Anzeige von 3 verschiedenen Entitäten mit GET (Kundenliste, Kategorien, Produktliste)
 - 2 verschiedene Entitäten mit POST, PATCH, DELETE (Buttons mit Neu, Bearbeiten oder Löschen)
 - Drei oder mehr zusätzliche Funktionen sind verfügbar und funktionsfähig:
-  - Navigationsleiste
+  - Navigationsleiste:
 -	Navigationsliste mit «Adnim» und «Kunden» Bereich (Umschaltung oben Rechts)
   - Startseite mit Schokolelli Logo
   - Fotogallerie
@@ -218,7 +218,7 @@ zB. https://www.youtube.com/watch?v=qJqjcxLvEwg
 ### 01.11.2024
 
 - Navigation Leiste angepasst und gesplittet (app.jsx Code aktualisiert)
- - (1 x Kundenansicht) und (1x Admin Bereich) hinzugefpgt
+ - (1 x Kundenansicht) und (1x Admin Bereich) hinzugefügt
 - 2 neue Buttons kreiert (oben Rechts in der Navigation Leiste)
 - Farben der Buttons angepasst
 
