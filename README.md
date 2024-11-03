@@ -1,21 +1,5 @@
 # Webdesign-Projektarbeit-React
 
-## Anforderungen
-
-Getestet mit Windows 11
-
-- [Visual Studio Code] https://code.visualstudio.com/Download
-- [Docker] https://docs.docker.com/desktop/install/windows-install/
-- [Node.js] https://nodejs.org/en/download/package-manager | LTS-Version wird empfohlen
-- [Github] https://git-scm.com/downloads
-
-## Empfohlene Erweiterungen in Visual Studio Code
-
-- `mtxr.sqltools`
-- `mtxr.sqltools-driver-mysql`
-- `humao.rest-client`
-- `ms-azuretools.vscode-docker`
-
 ## W3Schools-Datenbank in Docker
 
 ### Übersicht
@@ -168,8 +152,8 @@ npm install react-bootstrap bootstrap
 
 ## Projektfunktionen
 
-- Anzeige von 3 verschiedenen Entitäten mit GET (Kundenliste, Kategorien, Produktliste)
-- 2 verschiedene Entitäten mit POST, PATCH, DELETE (Buttons mit Neu, Bearbeiten oder Löschen)
+- Anzeige von 3 verschiedenen Entitäten mit GET (customers, categories, products)
+- 3 verschiedene Entitäten mit POST, PATCH, DELETE (Buttons mit Neu, Bearbeiten oder Löschen)
 - Drei oder mehr zusätzliche Funktionen sind verfügbar und funktionsfähig:
   - Navigationsleiste:
 -	Navigationsliste mit «Adnim» und «Kunden» Bereich (Umschaltung oben Rechts)
@@ -224,7 +208,7 @@ zB. https://www.youtube.com/watch?v=qJqjcxLvEwg
 
 ### 03.11.2024
 
-- Alle Funktionen noch einmal getestet und überprüft (Alles funktioniert Fehlerfrei)
+- Alle Funktionen noch einmal getestet und überprüft (Alles funktioniert fehlerfrei)
 - Finale Version auf GitHub hochgeldaen
 
 

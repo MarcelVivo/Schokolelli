@@ -44,24 +44,26 @@ function ProductList() {
 
   const handleSave = (productId) => {
     const updatedProduct = editedProduct[productId];
-    fetch(`${api}/products/${productId}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedProduct),
-    })
-      .then(response => {
-        if (response.ok) {
-          setProducts(products.map(product =>
-            product.ProductID === productId ? { ...product, ...updatedProduct } : product
-          ));
-          setEditableProductId(null);
-        } else {
-          alert('Failed to update product');
-        }
+    if (updatedProduct) {
+      fetch(`${api}/products/${productId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedProduct),
       })
-      .catch(error => console.error('Error updating product:', error));
+        .then(response => {
+          if (response.ok) {
+            setProducts(products.map(product =>
+              product.ProductID === productId ? { ...product, ...updatedProduct } : product
+            ));
+            setEditableProductId(null);
+          } else {
+            alert('Failed to update product');
+          }
+        })
+        .catch(error => console.error('Error updating product:', error));
+    }
   };
 
   const handleDelete = (productId) => {
@@ -80,23 +82,33 @@ function ProductList() {
 
   const handleAddNewProduct = () => {
     const newProduct = editedProduct['new'];
-    fetch(`${api}/products`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newProduct),
-    })
-      .then(response => response.json())
-      .then(data => {
-        setProducts([...products, data]);
-        setEditableProductId(null);
-        setEditedProduct(prev => {
-          const { new: _, ...rest } = prev;
-          return rest;
-        });
+    if (newProduct) {
+      fetch(`${api}/products`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newProduct),
       })
-      .catch(error => console.error('Error adding new product:', error));
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Failed to add new product');
+          }
+        })
+        .then(data => {
+          setProducts([...products, data]);
+          setEditableProductId(null);
+          setEditedProduct(prev => {
+            const { new: _, ...rest } = prev;
+            return rest;
+          });
+        })
+        .catch(error => console.error('Error adding new product:', error));
+    } else {
+      alert('Bitte alle Felder ausfüllen');
+    }
   };
 
   return (
