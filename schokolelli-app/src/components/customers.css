@@ -1,39 +1,16 @@
-/* src/components/customers.css */
+.table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-top: 20px;
+}
 
-.container {
-    margin: auto;
-    max-width: 800px;
-    padding: 16px;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-  
-  .error {
-    color: red;
-    margin-bottom: 16px;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .table th, .table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-  }
-  
-  .table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
+.table th {
+  background-color: #3e2723;
+  color: #ffffff;
+}
+
+.table tr:hover {
+  background-color: #f5f5f5;
+}

@@ -1,39 +1,49 @@
-/* src/components/navbar.css */
 .navbar {
-  background-color: #4e342e; /* Schokoladenbraun als Hintergrundfarbe */
-  padding: 10px 0;
   display: flex;
   justify-content: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  background-color: #5d4037; /* Schokoladenbraun */
+  padding: 15px;
 }
 
 .navbar-list {
-  list-style-type: none;
   display: flex;
-  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
+  justify-content: center;
 }
 
 .navbar-item {
-  font-weight: bold;
+  margin: 0 15px;
 }
 
 .navbar-item a {
-  color: #d2b48c; /* Pastellbraun für die Schriftfarbe */
+  color: #d7b39d; /* Hellbraun */
   text-decoration: none;
-  padding: 10px 15px;
-  transition: background-color 0.3s;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
 }
 
 .navbar-item a:hover {
-  background-color: #795548; /* Dunkleres Schokoladenbraun für den Hover-Effekt */
-  border-radius: 4px;
+  color: #ffffff;
 }
 
-.navbar-item a:visited {
-  color: #b2957a; /* Etwas dunklerer Pastellton für besuchte Links */
+.highlight-button-container {
+  margin-left: auto;
+}
+
+.highlight-button {
+  background-color: #d7b39d; /* Hellbraun */
+  color: #5d4037; /* Dunkelbraun */
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.highlight-button:hover {
+  background-color: #b5947c; /* Etwas dunkleres Hellbraun */
 }

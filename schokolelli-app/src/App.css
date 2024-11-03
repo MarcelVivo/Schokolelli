@@ -118,7 +118,7 @@
 }
 
 .btn-primary {
-  background-color: #5d4037; /* Schokoladenbraun */
+  background-color: #380f03; /* Schokoladenbraun */
   color: #fff;
 }
 
@@ -127,25 +127,25 @@
 }
 
 .btn-secondary {
-  background-color: #d7b39d; /* Pastellbraun */
+  background-color: #502002; /* Pastellbraun */
   color: #fff;
 }
 
 .btn-secondary:hover {
-  background-color: #c3a089;
+  background-color: #411b01;
 }
 
 .btn-success {
-  background-color: #4caf50;
+  background-color: #044106;
   color: #fff;
 }
 
 .btn-success:hover {
-  background-color: #45a049;
+  background-color: #1f8024;
 }
 
 .btn-danger {
-  background-color: #f44336;
+  background-color: #970e05;
   color: #fff;
 }
 

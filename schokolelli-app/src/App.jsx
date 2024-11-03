@@ -7,21 +7,26 @@ import Fotogalerie from './components/fotogalerie';
 import Preisliste from './components/preisliste';
 import Customers from './components/customers';
 import CategoryList from './components/categories';
+import ProductList from './components/products';
 import Greeting from './components/greetings';
 import './app.css';
 
 function App() {
   return (
     <Router>
-      <div>
+      <div> 
         <Navbar />
         <Routes>
-          <Route path="/" element={<Greeting />} /> {/* Standard-Homepage */}
-          <Route path="/categories" element={<CategoryList />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/preisliste" element={<Preisliste />} />
+          {/* Kundenansicht */}
+          <Route path="/" element={<Greeting />} />
           <Route path="/bestellformular" element={<Bestellformular />} />
           <Route path="/fotogalerie" element={<Fotogalerie />} />
+          <Route path="/preisliste" element={<Preisliste />} />
+
+          {/* Admin Bereich */}
+          <Route path="/admin/customers" element={<Customers />} />
+          <Route path="/admin/products" element={<ProductList />} />
+          <Route path="/admin/categories" element={<CategoryList />} />
         </Routes>
       </div>
     </Router>

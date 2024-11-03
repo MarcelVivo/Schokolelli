@@ -1,8 +1,8 @@
 .order-form {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 70px auto; /* Korrigiert: 10px statt 10, für gültiges CSS */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc; /* Korrigiert: Randstärke auf 2px geändert */
   border-radius: 5px;
   background-color: #f9f9f9;
 }

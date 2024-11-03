@@ -1,5 +1,6 @@
 // src/components/customers.jsx
 import React, { useEffect, useState } from 'react';
+import './customers.css'; // Importiere die CSS-Datei für Styling
 
 const api = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
@@ -98,13 +99,6 @@ function CustomerList() {
             value={editedCustomer['new']?.CustomerName || ''}
             onChange={(e) => handleInputChange('new', 'CustomerName', e.target.value)}
           />
-          <input
-            className="border p-2 mb-2 w-full"
-            type="text"
-            placeholder="Email"
-            value={editedCustomer['new']?.Email || ''}
-            onChange={(e) => handleInputChange('new', 'Email', e.target.value)}
-          />
           <div className="flex space-x-2">
             <button
               className="btn btn-secondary px-4 py-2 mb-4"
@@ -145,7 +139,6 @@ function CustomerList() {
         <thead>
           <tr>
             <th className="py-2 px-4 border-b">Name des Kunden</th>
-            <th className="py-2 px-4 border-b">Email</th>
             <th className="py-2 px-4 border-b">Aktionen</th>
           </tr>
         </thead>
@@ -164,20 +157,6 @@ function CustomerList() {
                   />
                 ) : (
                   customer.CustomerName
-                )}
-              </td>
-              <td className="py-2 px-4 border-b">
-                {editableCustomerId === customer.CustomerID ? (
-                  <input
-                    className="border p-2 w-full"
-                    type="text"
-                    value={editedCustomer[customer.CustomerID]?.Email || customer.Email}
-                    onChange={(e) =>
-                      handleInputChange(customer.CustomerID, 'Email', e.target.value)
-                    }
-                  />
-                ) : (
-                  customer.Email
                 )}
               </td>
               <td className="py-2 px-4 border-b">
